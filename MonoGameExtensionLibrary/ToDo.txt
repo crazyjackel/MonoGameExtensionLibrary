@@ -1,0 +1,4 @@
+﻿Text Alignment and Control Class System
+Physics Gameobjects with a defined preset of different physics, like velocity/acceleration
+DOCUMENTATION, this needs documentation
+Organization with Code Formatter, especially Circ and Rect

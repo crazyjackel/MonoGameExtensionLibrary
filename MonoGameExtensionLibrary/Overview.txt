@@ -1,0 +1,34 @@
+﻿StateMachine and State are useful in the creation of State Machines
+
+StateMachine keeps track of a Dictionary of States that is accessible by using an enumerator
+State keeps track of the state's enumerator representation and information on the conditions for the next state and what to do upon entering the next state
+
+
+Text Constructor and Text  (WIP)
+
+Text Constructor refers to a robust constructor class that is designed to create text classes
+Text structs are used to quickly create and write Text in an efficient manner using SpriteBatches
+
+
+IShape, Circ, and Rect
+
+IPositionable2d describes something with a X, Y position
+IBoundable2d inherits from IPositionable2d, but keeps track of a Rectangle to describes the AABB of an object
+IShape2d is an interface that inherits from IBoundable2d, but add checks for whether it contains a point or intersects another Ishape2d
+doublesided in Ishape2d refers to whether the IShape2d instance should check the other Ishape2d in the case of it not have an intersection method
+IShape2d<Shape> Where Shape:Ishape2d is an alternate version of IShape2d that impliments IEquatable, which adds an Equals() function, as well as a check against other of the same shape
+
+Rect is a struct inherited from Ishape2d<Rect> that describes a rectangle made of floats
+Circ is a struct inherited from Ishape2d<Circ> that describes a Circ made of floats
+
+Collider
+
+A Collider is a class that adds some special functionality to a shape, most notibly an event system and an optimization to checking for collisions
+A Collider can have functions subscribe to it's events: OnCollisionEnter, OnCollisionStay, OnCollisionExit that it will call when it does on of the things
+Using a collider rather than a shape allows for more control of the ways a collider can interact with other colliders
+
+GameObject
+
+A Gameobject describes the combination of a Collider with a Drawable component, Game objects add two new events: Draw and Update
+The Draw Event will be called whenever a gameobject is drawn and the same for the Update Event
+Gameobjects provide the bare minimum for creating engaging objects in the world in a singular class.
